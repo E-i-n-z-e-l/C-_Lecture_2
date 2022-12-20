@@ -1,0 +1,48 @@
+﻿void Fillarray(int[] collection) // collection - просто название что содержится в массиве, можно менять.
+{
+    int length = collection.Length;
+    int index = 0;
+    
+    while (index < length)
+    {
+        collection[index] = new Random().Next(1, 10);
+        index = index + 1;
+    }   
+}
+
+void PrintArray(int[] coll)
+{
+    int count = coll.Length;
+    int position = 0;
+    while(position < count)
+    {
+        Console.WriteLine(coll[position]);
+        position = position +1;
+    }
+}
+
+int IndexOf(int[] collection, int find)
+{
+    int count = collection.Length;
+    int index = 0;
+    int position = -1;
+    while(index < count)
+    {
+        if(collection[index] == find)
+        {
+            position = index;
+            break;
+        }
+        index = index + 1;
+    }
+    return position;
+}
+
+int[] array = new int[10];
+
+Fillarray(array);
+PrintArray(array);
+Console.WriteLine();
+
+int pos = IndexOf(array, 4);
+Console.WriteLine(pos);
